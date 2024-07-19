@@ -1,1 +1,1 @@
-export PATH='$HOME/.pyenv/bin:$PATH'
+export PATH="$HOME/.pyenv/bin:$PATH"

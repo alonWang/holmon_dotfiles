@@ -6,8 +6,9 @@ set -e
 
 cd "$(dirname $0)"/..
 
-echo "› brew bundle"
-brew bundle
-
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  echo "› brew bundle"
+  brew bundle
+fi
 # find the installers and run them iteratively
-find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+find . -name install.sh -not -path "*oh_my_zsh*" | while read installer ; do sh -c "${installer}" ; done
