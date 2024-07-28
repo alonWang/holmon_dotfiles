@@ -11,4 +11,4 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew bundle
 fi
 # find the installers and run them iteratively
-find . -name install.sh -not -path "*oh_my_zsh*" | while read installer ; do sh -c "${installer}" ; done
+find . -name install.sh -not -path "*oh_my_zsh*"| while read installer ; do chmod u+x "${installer}"; sh -c "${installer}" ; done
